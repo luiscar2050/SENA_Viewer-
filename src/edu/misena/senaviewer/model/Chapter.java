@@ -3,8 +3,8 @@ package edu.misena.senaviewer.model;
 import java.util.Scanner;
 
 public class Chapter {
-    int id;
-    String title;
+    static int id;
+    static String title;
     int duration;
     short year;
     boolean viewed;
@@ -17,6 +17,8 @@ public class Chapter {
         this.year = year;
     }
 
+    static Chapter chapter = new Chapter("Lucifer", 45, (short) 2019);
+
     public int getId(){
         return id;
     }
@@ -25,7 +27,7 @@ public class Chapter {
         this.id = id;
     }
 
-    public String getTitle(){
+    public static String getTitle(){
         return title;
     }
 
@@ -79,11 +81,11 @@ public class Chapter {
         int opcion;
 
         do{
-            String message = "\n\nMenu de Chapter\n\n";
+            String message = "\n\nmenu de Chapter\n\n";
 
-            message += "1. Getter\n";
-            message += "2. Setter\n";
-            message += "3. Salir\n\n";
+            message += "1. Ver informacion\n";
+            message += "2. Actualizar informacion\n";
+            message += "3. Salir...\n\n";
 
             System.out.println(message);
 
@@ -95,16 +97,12 @@ public class Chapter {
                     int opcion1;
 
                     do{
-                        String message1 = "\n\nMenu Getter de Chapter\n\n";
+                        String message1 = "\n\nvista de Chapter\n\n";
 
-                        message1 += "1. id\n";
-                        message1 += "2. title\n";
-                        message1 += "3. duration\n";
-                        message1 += "4. year\n";
-                        message1 += "5. viewed\n";
-                        message1 += "6. timeViewed\n";
-                        message1 += "7. sessionNumber\n";
-                        message1 += "8. Salir\n\n";
+                        message1 += "1. Ver titulo del capitulo\n";
+                        message1 += "2. Ver duracuion del capitulo\n";
+                        message1 += "3. Ver año del capitulo\n";
+                        message1 += "4. Salir...\n\n";
 
                         System.out.println(message1);
 
@@ -113,34 +111,29 @@ public class Chapter {
 
                         switch (opcion1){
                             case 1:
+                                System.out.println("El titulo del capitulo es: " + chapter.getTitle());
                                 break;
                             case 2:
+                                System.out.println("La duracion del capitulo es: " + chapter.getDuration());
                                 break;
                             case 3:
+                                System.out.println("El año del capitulo es: " + chapter.getYear());
                                 break;
                             case 4:
-                                break;
-                            case 5:
-                                break;
-                            case 6:
-                                break;
-                            case 7:
-                                break;
-                            case 8:
                                 System.out.println("Saliendo del programa...");
                                 break;
                             default:
-                                System.out.println("Ingrese una opcion valida");
+                                System.out.println("Ingrese una opción valida");
                                 break;
 
                         }
-                    }while(opcion1 !=6);
+                    }while(opcion1 !=4);
                     break;
                 case 2:
                     int opcion2;
 
                     do{
-                        String message2 = "\n\nMenu Setter de Chapter\n\n";
+                        String message2 = "\n\nSetter de Chapter\n\n";
 
                         message2 += "1. id\n";
                         message2 += "2. title\n";
@@ -164,18 +157,10 @@ public class Chapter {
                             case 3:
                                 break;
                             case 4:
-                                break;
-                            case 5:
-                                break;
-                            case 6:
-                                break;
-                            case 7:
-                                break;
-                            case 8:
                                 System.out.println("Saliendo del programa...");
                                 break;
                             default:
-                                System.out.println("Ingrese una opcion valida");
+                                System.out.println("Ingrese una opción valida");
                                 break;
 
                         }
@@ -185,7 +170,7 @@ public class Chapter {
                     System.out.println("Saliendo del programa...");
                     break;
                 default:
-                    System.out.println("Ingrese una opcion valida");
+                    System.out.println("Ingrese una opción valida");
                     break;
 
             }
