@@ -2,7 +2,7 @@ package edu.misena.senaviewer.model;
 
 import java.util.Date;
 
-public class Book {
+public class  Book {
     int id;
     String title;
     Date editionDate;
