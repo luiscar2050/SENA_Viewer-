@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class Chapter {
     static int id;
     static String title;
+
     int duration;
     short year;
     boolean viewed;
+
     int timeViewed;
     int sessionNumber;
 
@@ -17,7 +19,7 @@ public class Chapter {
         this.year = year;
     }
 
-    static Chapter chapter = new Chapter("Lucifer", 45, (short) 2019);
+    static Chapter chapter = new Chapter("El chavo del 8", 20, (short) 2005);
 
     public int getId(){
         return id;
@@ -81,7 +83,7 @@ public class Chapter {
         int opcion;
 
         do{
-            String message = "\n\nmenu de Chapter\n\n";
+            String message = "\n\n!Bienvenido al menu de Chapter¡\n\n";
 
             message += "1. Ver informacion\n";
             message += "2. Actualizar informacion\n";
@@ -97,16 +99,17 @@ public class Chapter {
                     int opcion1;
 
                     do{
-                        String message1 = "\n\nvista de Chapter\n\n";
+                        String message1 = "\n\n!Bienvenido a la vista de Chapter¡\n\n";
 
                         message1 += "1. Ver titulo del capitulo\n";
                         message1 += "2. Ver duracuion del capitulo\n";
                         message1 += "3. Ver año del capitulo\n";
-                        message1 += "4. Salir...\n\n";
+                        message1 += "4. Ver toda la informacion\n";
+                        message1 += "5. Salir...\n\n";
 
                         System.out.println(message1);
 
-                        System.out.println("Elige opcion: ");
+                        System.out.println("Elige tu opcion: ");
                         opcion1 = scanner.nextInt();
 
                         switch (opcion1){
@@ -120,6 +123,12 @@ public class Chapter {
                                 System.out.println("El año del capitulo es: " + chapter.getYear());
                                 break;
                             case 4:
+                                System.out.println("Informacion del capitulo:");
+                                System.out.println("titulo: " + chapter.getTitle());
+                                System.out.println("fecha: " + chapter.getDuration());
+                                System.out.println("editorial: " + chapter.getYear());
+                                break;
+                            case 5:
                                 System.out.println("Saliendo del programa...");
                                 break;
                             default:
@@ -127,26 +136,22 @@ public class Chapter {
                                 break;
 
                         }
-                    }while(opcion1 !=4);
+                    }while(opcion1 !=5);
                     break;
                 case 2:
                     int opcion2;
 
                     do{
-                        String message2 = "\n\nSetter de Chapter\n\n";
+                        String message2 = "\n\n!Bienvenido al Setter de Chapter¡\n\n";
 
-                        message2 += "1. id\n";
-                        message2 += "2. title\n";
-                        message2 += "3. duration\n";
-                        message2 += "4. year\n";
-                        message2 += "5. viewed\n";
-                        message2 += "6. timeViewed\n";
-                        message2 += "7. sessionNumber\n";
-                        message2 += "8. Salir...\n\n";
+                        message2 += "1. Actualizar titulo del capitulo\n";
+                        message2 += "2. Actualizar duration del capitulo\n";
+                        message2 += "3. Actualizar año del capitulo\n";
+                        message2 += "4. Salir...\n\n";
 
                         System.out.println(message2);
 
-                        System.out.println("Elige opcion: ");
+                        System.out.println("Elige tu opcion: ");
                         opcion2 = scanner.nextInt();
 
                         switch (opcion2){
@@ -164,7 +169,7 @@ public class Chapter {
                                 break;
 
                         }
-                    }while(opcion2 !=6);
+                    }while(opcion2 !=4);
                     break;
                 case 3:
                     System.out.println("Saliendo del programa...");
@@ -177,5 +182,19 @@ public class Chapter {
 
         }while(opcion !=3);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn=" + title +
+                ", readed=" + duration +
+                ", timeReaded=" + year +
+                ", timeReaded=" + viewed +
+                ", timeReaded=" + timeViewed +
+                ", timeReaded=" + sessionNumber +
+                ", " + super.toString() +
+                '}';
     }
 }
